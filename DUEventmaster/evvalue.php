@@ -22,12 +22,12 @@ if($_POST['choose']=="all" ){
     $mail = new PHPMailer;
 
     $mail->isSMTP();                                   // Set mailer to use SMTP
-    $mail->Host = 'tls://smtp.gmail.com:587';                    // Specify main and backup SMTP servers
+    $mail->Host = 'smtp.gmail.com';                    // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                            // Enable SMTP authentication
     $mail->Username = 'youremail@gmail.com';          // SMTP username
     $mail->Password = 'your password'; // SMTP password
     $mail->SMTPSecure = 'tls';                         // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 25;                                 // TCP port to connect to
+    $mail->Port = 587;                                 // TCP port to connect to
 
                     
     $mail->setFrom('noreply@dueventmaster.com', 'DUEventmaster',0);
@@ -87,7 +87,7 @@ else if($_POST['choose']=="dept"){
     $mail->SMTPSecure = 'tls';                         // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                 // TCP port to connect to
 
-              ini_set('sendmail_from', 'noreply@dueventmaster.com');      
+    ini_set('sendmail_from', 'noreply@dueventmaster.com');      
     $mail->setFrom('noreply@dueventmaster.com', 'DUEventmaster',0);
     $mail->addReplyTo('noreply@dueventmaster.com', 'DUEventmaster');
                      // Add a recipient
